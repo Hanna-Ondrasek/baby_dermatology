@@ -1,6 +1,7 @@
 // App.js
 import React from "react";
 import TeachableMachineWebcam from "./TeachableMachineWebcam";
+import GeminiChat from "./GeminiChat";
 
 
 function FadeInSection(props) {
@@ -115,6 +116,14 @@ healthcare provider if you suspect a serious condition or if symptoms persist.</
 </div>
                 <div class="text-box">
       <TeachableMachineWebcam />
+      </div>
+
+      <div class="text-box">
+      <h1>Need Help Understanding the Results?</h1>
+<p>
+  Talk to our friendly Gemini API AI assistant below! Parents can ask questions about skin conditions, what to do next, or how to interpret the model’s results.
+</p>
+      <GeminiChat />
       </div>
 
       <div class="text-box">
