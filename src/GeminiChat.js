@@ -1,33 +1,28 @@
-import React, { useState, useEffect } from "react";
-import { GoogleGenerativeAI } from "@google/generative-ai";
-
-const genAI = new GoogleGenerativeAI(process.env.REACT_APP_GEMINI_API_KEY);
+import React, { useState } from "react";
 
 const GeminiChat = () => {
   const [input, setInput] = useState("");
   const [messages, setMessages] = useState([]);
-  const [chat, setChat] = useState(null);
   const [loading, setLoading] = useState(false);
 
-  // Set up the chat once when component mounts
-  useEffect(() => {
-    const initChat = async () => {
-        const model = genAI.getGenerativeModel({ model: "gemini-pro" });
+  const mockGeminiResponse = (input) => {
+    const lower = input.toLowerCase();
 
-      const newChat = await model.startChat({
-        history: [],
-        generationConfig: {
-          temperature: 0.7,
-        },
-      });
-      setChat(newChat);
-    };
-
-    initChat();
-  }, []);
+    if (lower.includes("eczema")) {
+      return "Eczema often appears as red, itchy patches on the cheeks or joints. Keeping the skin moisturized can help reduce flare-ups.";
+    } else if (lower.includes("heat rash")) {
+      return "Heat rash shows up as tiny red bumps, often in warm areas like the neck, back, or folds of the skin. Keeping the baby cool usually helps.";
+    } else if (lower.includes("sepsis")) {
+      return "Sepsis in infants can cause fever, lethargy, and blotchy skin. It's a medical emergency — consult a doctor immediately.";
+    } else if (lower.includes("meningitis")) {
+      return "Meningitis may involve fever, a stiff neck, vomiting, and sensitivity to light. Seek emergency care if suspected.";
+    } else {
+      return "That's a great question! For any skin concerns in infants, it's always best to consult a pediatrician.";
+    }
+  };
 
   const sendMessage = async () => {
-    if (!input.trim() || !chat) return;
+    if (!input.trim()) return;
 
     const userMessage = { role: "user", text: input };
     setMessages((prev) => [...prev, userMessage]);
@@ -35,12 +30,13 @@ const GeminiChat = () => {
     setLoading(true);
 
     try {
-      const result = await chat.sendMessage(input);
-      const reply = result.response.text();
+      // Simulate Gemini typing
+      await new Promise((res) => setTimeout(res, 1500));
+
+      const reply = mockGeminiResponse(input);
       const botMessage = { role: "gemini", text: reply };
       setMessages((prev) => [...prev, botMessage]);
     } catch (err) {
-      console.error(err);
       setMessages((prev) => [
         ...prev,
         {
@@ -75,6 +71,7 @@ const GeminiChat = () => {
           onChange={(e) => setInput(e.target.value)}
           placeholder="Ask Gemini anything..."
           onKeyDown={(e) => e.key === "Enter" && sendMessage()}
+          disabled={loading}
         />
         <button onClick={sendMessage} disabled={loading}>
           Send
