@@ -26,7 +26,7 @@ function App() {
   return (
     <div className="App">
       <div class="header">
-  <a href="#default" class="logo"> AI Diagnosis for Infant Skin Conditions</a>
+  <a href="#default" class="logo"> 🩺 SkinSnap Baby  </a>
   <div class="header-right">
     <a class="active" href="#home">Home</a>
     <a href="#contact">Contact</a>

@@ -4,7 +4,7 @@
 }
 
 body {
-  background-image: url('img_background.jpg');
+  background-image: url('baby.jpg');
   background-repeat: no-repeat;
   background-attachment: fixed;  
   background-size: cover;
@@ -12,9 +12,13 @@ body {
   
 }
 
+h1, h2, h3 {
+  text-shadow: 1px 1px 2px rgba(27, 27, 27, 0.8);
+}
+
 .header {
   overflow: hidden;
-  background-color: #f1f1f1;
+  background-color: 185, 191, 191;
   padding: 20px 10px;
 }
 
@@ -32,6 +36,8 @@ body {
 .header a.logo {
   font-size: 25px;
   font-weight: bold;
+  font-family: 'Cambria', 'Optima', 'Garamond', 'Proxima Nova', 'Arial Narrow', system-ui;
+  text-shadow: 1px 1px 2px rgba(27, 27, 27, 0.8);
 }
 
 .header a:hover {
@@ -46,6 +52,8 @@ body {
 
 .header-right {
   float: right;
+  font-family: 'Cambria', 'Optima', 'Garamond', 'Proxima Nova', 'Arial Narrow', system-ui;
+  text-shadow: 1px 1px 2px rgba(27, 27, 27, 0.8);
 }
 
 @media screen and (max-width: 500px) {
@@ -62,7 +70,7 @@ body {
 
 .text-box-title {
   color: white;
-  
+  background: rgba(0, 0, 0, 0.7);
   background-color: rgba(27, 27, 27, 0.8); /* Semi-transparent grey background */
   padding: 10px; /* Add some space around the text */
   border-radius: 5px; /* round corners */ 
@@ -89,6 +97,7 @@ body {
   margin-bottom: 120px;
   font-family: 'Cambria', 'Optima', 'Garamond', 'Proxima Nova', 'Arial Narrow', system-ui;
   transition: transform 0.2s ease-in-out; /* Add a smooth transition */
+  background: rgba(0, 0, 0, 0.7);
 }
 
 
@@ -115,11 +124,7 @@ body {
   visibility: visible;
 }
 
-/* Just for presentational purposes, please disregard in your own implementation */
-.App {
-  max-width: 100%;
-  padding: 1em;
-}
+
 
 .box {
   padding: 50px;
