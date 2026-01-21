@@ -1,70 +1,147 @@
-# Getting Started with Create React App
+# SkinSnap Baby — Infant Skin Condition Predictor
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Live demo: https://baby-dermatology.vercel.app/
 
-## Available Scripts
+SkinSnap Baby is a browser-based application that uses a machine learning image classifier to provide a real-time, webcam-based estimate of common infant skin conditions. The goal is to offer parents and caregivers a fast, accessible, and easy-to-use tool for preliminary assessment of skin issues such as eczema, heat rash, and other dermatologic conditions.
 
-In the project directory, you can run:
+This project runs entirely in the browser and is built using React, webcam capture, and Google’s Teachable Machine.
 
-### `npm start`
+---
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Live Demo
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Try it live:
 
-### `npm test`
+👉 https://baby-dermatology.vercel.app/
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+---
 
-### `npm run build`
+## Project Overview
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+The application works as follows:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+1. The user opens the site and enables their webcam  
+2. The live camera feed is analyzed in real time by the Teachable Machine model  
+3. The model predicts the most likely skin condition from captured frames  
+4. The user can ask questions to an AI assistant (Gemini API) to help interpret results
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+This tool supports early awareness and decision-making, but it is *not* a medical diagnosis.
 
-### `npm run eject`
+---
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## Features
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- Real-time webcam-based skin condition classification  
+- Fully client-side inference (no server image uploads)  
+- Trained with Google Teachable Machine  
+- Simple and accessible UI  
+- Gemini API chat assistant for explanation and guidance  
+- No installation required
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+---
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## Tech Stack
 
-## Learn More
+- React  
+- JavaScript / JSX  
+- HTML & CSS  
+- Teachable Machine model (image classification)  
+- Gemini API for AI chat
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+All processing occurs in the browser for privacy and speed.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+---
 
-### Code Splitting
+## How the ML Model Works
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+- Trained through Google Teachable Machine
+- Model classifies webcam images into predefined infant skin condition categories
+- Captured frames are continuously fed to the model
+- Predictions are displayed to the user in real time
 
-### Analyzing the Bundle Size
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## How to Run Locally
 
-### Making a Progressive Web App
+1. Clone the repo:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+```bash
+git clone https://github.com/<your-username>/<your-repo>.git
+```
 
-### Advanced Configuration
+2. Install dependencies:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+```bash
+npm install
+```
 
-### Deployment
+3. Start the development server:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+```bash
+npm start
+```
 
-### `npm run build` fails to minify
+4. Open your browser at:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+```
+http://localhost:3000
+```
+
+Allow webcam access when prompted.
+
+---
+
+## How to Use
+
+1. Open the site or local build  
+2. Enable webcam access  
+3. Position the infant’s skin area in view of the camera  
+4. View model predictions in real time  
+5. Ask the built-in AI assistant for help interpreting results
+
+---
+
+## Disclaimer
+
+This tool is for informational and educational purposes only. It does *not* provide medical diagnoses.
+
+Always consult a qualified healthcare professional if:
+
+- Symptoms persist
+- Symptoms worsen
+- You suspect a serious or urgent condition
+
+---
+
+## Accessibility and Impact
+
+This application is designed to be:
+
+- Easy to use
+- Lightweight
+- Browser-based (no install)
+- Useful in contexts with limited access to clinical resources
+
+---
+
+## Future Improvements
+
+- Expand and diversify the training dataset
+- Improve accuracy across skin tones and lighting conditions
+- Add more categorized skin conditions
+- Enhance mobile responsiveness
+- Collaborate with clinicians for model validation
+- Add confidence or uncertainty metrics for predictions
+
+---
+
+## Screenshots
+
+<img width="1782" height="1005" alt="image" src="https://github.com/user-attachments/assets/3416fe7e-3cc6-4584-b99c-502024bef6f8" />
+
+
+## Contact
+
+Developer: Hanna Ondrasek  
+Email: ondrasek_hanna@wheatoncollege.edu  
+Live Demo: https://baby-dermatology.vercel.app/
